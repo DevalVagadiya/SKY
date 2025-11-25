@@ -1,4 +1,3 @@
-import React from "react";
 import { Eye, ArrowUpRight } from "lucide-react";
 
 const tests = [

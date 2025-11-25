@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Home } from "lucide-react";
 import { FaUtensils, FaClock, FaVenusMars, FaCalendarAlt, FaPhone } from "react-icons/fa";
 
-const HeroBtCbc = ({ test }) => {
+const HeroBtCbc = ({ test }: { test: any }) => {
   const details = [
     {
       icon: <FaUtensils className="text-blue-500" />,

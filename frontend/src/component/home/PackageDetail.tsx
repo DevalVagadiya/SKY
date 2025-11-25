@@ -4,7 +4,7 @@ import { ArrowRight, Home } from "lucide-react";
 
 const PackageDetail = () => {
   const { id } = useParams();
-  const [pkg, setPkg] = useState(null);
+  const [pkg, setPkg] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const PackageDetail = () => {
                 Tests Included:
               </h3>
               <ul className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-gray-700">
-                {pkg.tests.map((test, index) => (
+                {pkg.tests.map((test: string, index: number) => (
                   <li key={index}>• {test}</li>
                 ))}
               </ul>

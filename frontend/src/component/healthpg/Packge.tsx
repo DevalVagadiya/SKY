@@ -2,8 +2,16 @@ import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
+type Package = {
+  id: string | number;
+  img?: string;
+  title: string;
+  parameters_no?: number;
+  price?: number;
+};
+
 const Packge = () => {
-  const [packages, setPackages] = useState([]);
+  const [packages, setPackages] = useState<Package[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

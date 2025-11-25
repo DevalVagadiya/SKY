@@ -1,7 +1,18 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 
-const DetailUnifit = ({ pack }) => {
+interface Pack {
+  title: string;
+  price: number | string;
+  tests?: string | any[];
+  img?: string;
+  fasting?: string;
+  reportTime?: string;
+  sample?: string;
+  parameters_no?: number;
+}
+
+const DetailUnifit = ({ pack }: { pack: Pack }) => {
   const [showAll, setShowAll] = useState(true);
 
   // handle tests array (it might be array or stringified JSON)
@@ -94,7 +105,7 @@ const DetailUnifit = ({ pack }) => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 text-sm text-gray-700">
-            {(showAll ? parameters : parameters.slice(0, 8)).map((param, i) => (
+            {(showAll ? parameters : parameters.slice(0, 8)).map((param: string, i: number) => (
               <p key={i}>• {param}</p>
             ))}
           </div>

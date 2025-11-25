@@ -35,8 +35,19 @@ const steps = [
   },
 ];
 
+type PackageType = {
+  id?: number | string;
+  img?: string;
+  image?: string;
+  title?: string;
+  name?: string;
+  tests_no?: number;
+  parameters?: string;
+  price?: number | string;
+};
+
 const HelthPakeg = () => {
-  const [packages, setPackages] = useState([]);
+  const [packages, setPackages] = useState<PackageType[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

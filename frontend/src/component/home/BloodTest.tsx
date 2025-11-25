@@ -3,8 +3,8 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 
 export default function BloodTests() {
-  const [tests, setTests] = useState([]);
-  const [packages, setPackages] = useState([]);
+  const [tests, setTests] = useState<any[]>([]);
+  const [packages, setPackages] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const { id } = useParams();
@@ -127,7 +127,7 @@ export default function BloodTests() {
               <p className="text-sm mb-4">{pkg.subtitle}</p>
 
               <ul className="space-y-2 mb-4">
-                {pkg.tests.map((feature, index) => (
+                {pkg.tests.map((feature: string, index: number) => (
                   <li key={index} className="flex items-center text-sm">
                     <Check size={16} className="mr-2 text-white" />
                     {feature}

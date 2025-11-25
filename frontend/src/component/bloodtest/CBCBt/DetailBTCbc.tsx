@@ -1,4 +1,10 @@
-const DetailBTCbc = ({ test }) => {
+interface TestData {
+  name: string;
+  parameters?: string;
+  description: string;
+}
+
+const DetailBTCbc = ({ test }: { test: TestData }) => {
   const parameters = JSON.parse(test.parameters || "[]"); // parse JSON string from API
 
   return (
@@ -7,7 +13,7 @@ const DetailBTCbc = ({ test }) => {
       <div className="bg-white p-6 mb-8">
         <h2 className="text-xl font-bold mb-4">Parameters Included in {test.name}</h2>
         <div className="flex flex-col space-y-2 text-gray-700 text-sm">
-          {parameters.map((param, index) => (
+          {parameters.map((param: string, index: number) => (
             <span
               key={index}
               className="bg-gray-90 px-3 py-1 rounded-md text-gray-800"
