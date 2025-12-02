@@ -53,7 +53,7 @@ const HelthPakeg = () => {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const res = await fetch("/api/packages"); // Your API endpoint here
+        const res = await fetch("https://sky-backend-7kjf.onrender.com/api/packages"); // Your API endpoint here
         const data = await res.json();
         setPackages(data);
       } catch (error) {
