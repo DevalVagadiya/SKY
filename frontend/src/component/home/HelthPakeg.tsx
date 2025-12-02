@@ -51,20 +51,35 @@ const HelthPakeg = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPackages = async () => {
-      try {
-        const res = await fetch("https://sky-backend-7kjf.onrender.com/api/packages"); // Your API endpoint here
-        const data = await res.json();
-        setPackages(data);
-      } catch (error) {
-        console.error("Error fetching packages:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    if (!id) return;
 
-    fetchPackages();
-  }, []);
+    fetch(`https://sky-backend-7kjf.onrender.com/api/packages/${id}/`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPkg(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching package:", err);
+        setLoading(false);
+      });
+  }, [id]);
+
+  // useEffect(() => {
+  //   const fetchPackages = async () => {
+  //     try {
+  //       const res = await fetch("https://sky-backend-7kjf.onrender.com/api/packages"); // Your API endpoint here
+  //       const data = await res.json();
+  //       setPackages(data);
+  //     } catch (error) {
+  //       console.error("Error fetching packages:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchPackages();
+  // }, []);
 
   if (loading) {
     return <div className="text-center py-10">Loading packages...</div>;
