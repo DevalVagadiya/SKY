@@ -51,19 +51,19 @@ const HelthPakeg = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!id) return;
+    // if (!id) return;
 
     fetch(`https://sky-backend-7kjf.onrender.com/api/packages/${id}/`)
       .then((res) => res.json())
       .then((data) => {
-        setPkg(data);
+        setPackages(data);
         setLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching package:", err);
         setLoading(false);
       });
-  }, [id]);
+  }, []);
 
   // useEffect(() => {
   //   const fetchPackages = async () => {
