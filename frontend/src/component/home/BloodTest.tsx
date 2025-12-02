@@ -13,9 +13,9 @@ export default function BloodTests() {
     async function fetchData() {
       try {
         const testUrl = id
-          ? `http://localhost:8000/api/tests/${id}/`
-          : "http://localhost:8000/api/tests/";
-        const packageUrl = "http://localhost:8000/api/seasonal_packs/";
+          ? `https://sky-backend-7kjf.onrender.com/api/tests/${id}/`
+          : "https://sky-backend-7kjf.onrender.com/api/tests/";
+        const packageUrl = "https://sky-backend-7kjf.onrender.com/api/seasonal_packs/";
 
         const [testRes, packageRes] = await Promise.all([
           fetch(testUrl),
