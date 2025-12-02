@@ -15,20 +15,34 @@ const Packge = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPackages = async () => {
-      try {
-        const res = await fetch("https://sky-backend-7kjf.onrender.com/api/packages"); // ✅ your backend endpoint
-        const data = await res.json();
-        setPackages(data);
-      } catch (error) {
-        console.error("Error fetching packages:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
 
-    fetchPackages();
-  }, []);
+    fetch(`https://sky-backend-7kjf.onrender.com/api/packages/`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPackages(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching package:", err);
+        setLoading(false);
+      });
+  });
+  
+  // useEffect(() => {
+  //   const fetchPackages = async () => {
+  //     try {
+  //       const res = await fetch("https://sky-backend-7kjf.onrender.com/api/packages"); // ✅ your backend endpoint
+  //       const data = await res.json();
+  //       setPackages(data);
+  //     } catch (error) {
+  //       console.error("Error fetching packages:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchPackages();
+  // }, []);
 
   if (loading) return <div className="text-center py-10">Loading packages...</div>;
 
