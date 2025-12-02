@@ -10,7 +10,7 @@ const PackageDetail = () => {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`http://localhost:8000/api/seasonal_packs/${id}/`)
+    fetch(`https://sky-backend-7kjf.onrender.com/api/seasonal_packs/${id}/`)
       .then((res) => res.json())
       .then((data) => {
         setPkg(data);
