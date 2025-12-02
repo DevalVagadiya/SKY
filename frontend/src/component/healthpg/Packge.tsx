@@ -17,7 +17,7 @@ const Packge = () => {
   useEffect(() => {
     const fetchPackages = async () => {
       try {
-        const res = await fetch("/api/packages"); // ✅ your backend endpoint
+        const res = await fetch("https://sky-backend-7kjf.onrender.com/api/packages"); // ✅ your backend endpoint
         const data = await res.json();
         setPackages(data);
       } catch (error) {
