@@ -13,7 +13,7 @@ const MainUnifit = () => {
     if (!id) return;
 
     axios
-      .get(`http://localhost:8000/api/packages/${id}/`)
+      .get(`https://sky-backend-7kjf.onrender.com/api/packages/${id}/`)
       .then((res) => {
         setPackageData(res.data);
         setLoading(false);
