@@ -51,9 +51,8 @@ const HelthPakeg = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // if (!id) return;
 
-    fetch(`https://sky-backend-7kjf.onrender.com/api/packages/${id}/`)
+    fetch(`https://sky-backend-7kjf.onrender.com/api/packages/`)
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
@@ -63,7 +62,7 @@ const HelthPakeg = () => {
         console.error("Error fetching package:", err);
         setLoading(false);
       });
-  }, []);
+  });
 
   // useEffect(() => {
   //   const fetchPackages = async () => {
