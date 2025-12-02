@@ -13,7 +13,7 @@ const MainCbc = () => {
     if (!id) return;
 
     axios
-      .get(`http://localhost:8000/api/tests/${id}/`)  // ✅ dynamic URL
+      .get(`https://sky-backend-7kjf.onrender.com/api/tests/${id}/`)  // ✅ dynamic URL
       .then((res) => {
         setTest(res.data);
         setLoading(false);
