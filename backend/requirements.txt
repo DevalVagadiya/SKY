@@ -11,6 +11,7 @@ cryptography==45.0.7
 Django==5.2.7
 django-cors-headers==4.9.0
 djangorestframework==3.16.1
+gunicorn
 fastapi==0.116.1
 greenlet==3.2.4
 h11==0.16.0
