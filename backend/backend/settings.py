@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+@&otwuuhu8iqc8udbdqy1bnbepofh4wl%)q@uwg=e&x**c!e1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["sky-backend.onrender.com", "localhost"]
+ALLOWED_HOSTS = ["sky-backend-7kjf.onrender.com/", "localhost"]
 
 
 # Application definition
