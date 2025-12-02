@@ -137,6 +137,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # React dev server
+    "https://sky-weld.vercel.app/",  # React dev server
 ]
 CORS_ALLOW_CREDENTIALS = True
