@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-+@&otwuuhu8iqc8udbdqy1bnbepofh4wl%)q@uwg=e&x**c!e1
 DEBUG = True
 
 ALLOWED_HOSTS = ["sky-backend-7kjf.onrender.com", "localhost"]
+# ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -139,4 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "https://sky-weld.vercel.app/",  # React dev server
 ]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5173"
+# ]
 CORS_ALLOW_CREDENTIALS = True

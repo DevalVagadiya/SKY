@@ -44,6 +44,7 @@ type PackageType = {
   tests_no?: number;
   parameters?: string;
   price?: number | string;
+  is_popular?: boolean;
 };
 
 const HelthPakeg = () => {
@@ -96,26 +97,35 @@ const HelthPakeg = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
-          {packages.map((pkg) => (
-            <div
-              key={pkg.id}
-              className="bg-white rounded-2xl shadow overflow-hidden hover:shadow-lg transition"
-            >
-              <img src={pkg.img || pkg.image} alt={pkg.title || pkg.name} className="w-full h-40 object-cover" />
-              <div className="p-4">
-                <h3 className="font-bold text-md text-gray-900">{pkg.title || pkg.name}</h3>
-                <div className="flex items-center justify-between mt-2">
-                  <p className="text-gray-500 text-sm">{pkg.tests_no ? `${pkg.tests_no} Tests Included` : pkg.parameters}</p>
-                  <p className="text-lg font-bold">₹{pkg.price?.toString().replace(/^₹?/, "") || pkg.price}</p>
+          {packages
+            .filter((pkg) => pkg.is_popular)
+            .slice(0, 4)
+            .map((pkg) => (
+              <div
+                key={pkg.id}
+                className="bg-white rounded-2xl shadow overflow-hidden hover:shadow-lg transition"
+              >
+                <Link
+                    to={`/package/${pkg.id}`}
+                    key={pkg.id}
+                    className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300"
+                  >
+                <img src={pkg.img || pkg.image} alt={pkg.title || pkg.name} className="w-full h-40 object-cover" />
+                <div className="p-4">
+                  <h3 className="font-bold text-md text-gray-900">{pkg.title || pkg.name}</h3>
+                  <div className="flex items-center justify-between mt-2">
+                    <p className="text-gray-500 text-sm">{pkg.tests_no ? `${pkg.tests_no} Tests Included` : pkg.parameters}</p>
+                    <p className="text-lg font-bold">₹{pkg.price?.toString().replace(/^₹?/, "") || pkg.price}</p>
+                  </div>
+                  <div className="flex justify-end mt-3">
+                    <button className="bg-red-100 text-red-500 p-2 rounded-full hover:bg-red-200 transition">
+                      <ArrowUpRight size={18} />
+                    </button>
+                  </div>
                 </div>
-                <div className="flex justify-end mt-3">
-                  <button className="bg-red-100 text-red-500 p-2 rounded-full hover:bg-red-200 transition">
-                    <ArrowUpRight size={18} />
-                  </button>
-                </div>
+                </Link>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         <div className="flex justify-center mt-10">
@@ -140,7 +150,7 @@ const HelthPakeg = () => {
           {structures.map((item) => (
             <Link
               key={item.id}
-              to={`/${item.name.toLowerCase()}`}
+              to={`/structures/${item.name.toLowerCase()}`}
               className="text-center group"
             >
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto shadow-sm group-hover:shadow-md transition">

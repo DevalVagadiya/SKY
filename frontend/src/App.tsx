@@ -3,18 +3,18 @@ import Home from "./component/home/Home";
 // import BloodTest from "./component/home/BloodTest";
 import About from "./component/about/About";
 import BloodTestMain from "./component/bloodtest/BloodTestMain";
+import StructurePage from "./component/brain/StructurePage";
 import MainCbc from "./component/bloodtest/CBCBt/MainCbc";
 import MainHelth from "./component/healthpg/MainHelth";
 import MainUnifit from "./component/healthpg/UNIFIT PLUS @ UNIPATH/MainUnifit";
 import MainContact from "./component/Contact/MainContact";
-import MainBrain from "./component/brain/MainBrain";
 import PackageDetail from "./component/home/PackageDetail";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/brain" element={<MainBrain/>} />
+      <Route path="/structures/:structureName" element={<StructurePage />} />
       <Route path="/about" element={<About/>} />
       <Route path="/blood-tests" element={<BloodTestMain/>} />
       <Route path="/blood-tests/:id" element={<MainCbc />} />
