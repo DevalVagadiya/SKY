@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Home, ArrowUpRight } from "lucide-react";
+import { Home } from "lucide-react";
 
 type TestType = {
   id?: number | string;
