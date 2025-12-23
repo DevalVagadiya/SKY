@@ -1,4 +1,7 @@
-
+import header3 from "../../assets/header3.png";
+import header4 from "../../assets/header4.png";
+// import header5 from "../../assets/header5.png";
+import header6 from "../../assets/header6.png";
 
 const services = [
     {
@@ -6,32 +9,29 @@ const services = [
         icon: "🧪",
         title: "Scientific Vision Hub",
         desc: "Scientific Vision Hub drives innovation and collaboration to advance research and solve global challenges.",
-        image:
-            "https://img.freepik.com/free-photo/scientists-working-laboratory_23-2149235014.jpg?w=740",
+        image: header3
     },
     {
         id: 2,
         icon: "🧬",
         title: "Pathological Testing",
         desc: "Pathological testing at Trusted Experts provides accurate diagnostics for better treatment and care.",
-        image:
-            "https://img.freepik.com/free-photo/scientists-working-laboratory_23-2149235014.jpg?w=740",
+        image: header4
     },
     {
         id: 3,
         icon: "🏭",
         title: "Chemical Research",
         desc: "Chemical research at Trusted Experts drives innovation to enhance industries and promote sustainability.",
-        image:
-            "https://img.freepik.com/free-photo/scientists-working-laboratory_23-2149235014.jpg?w=740",
+        image: "https://img.freepik.com/free-photo/scientists-working-laboratory_23-2149235014.jpg?w=740",
+            // header5
     },
     {
         id: 4,
         icon: "⚗️",
         title: "Quantum Analysis Labs",
         desc: "Quantum Analysis Labs at Trusted Experts leverage advanced technology for precise insights and innovation.",
-        image:
-           "https://img.freepik.com/free-photo/scientists-working-laboratory_23-2149235014.jpg?w=740",
+        image: header6
     },
 ];
 

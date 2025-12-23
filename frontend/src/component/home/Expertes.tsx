@@ -1,6 +1,9 @@
 
 import { ArrowRight, FlaskConical, FileText, Droplet, ClipboardCheck } from "lucide-react";
 
+import header1 from "../../assets/header1.png";
+import header2 from "../../assets/header2.png";
+
 const Expertes = () => {
   return (
     <>
@@ -12,7 +15,7 @@ const Expertes = () => {
           {/* Image 1 */}
           <div className="w-1/2 z-20">
             <img
-              src="https://img.freepik.com/free-photo/microscope-used-by-young-lab-worker_1098-18426.jpg"
+              src={header1}
               alt="Medical Research"
               className="rounded-2xl border-4 border-yellow-400 shadow-lg object-cover w-full h-[350px]"
             />
@@ -20,7 +23,7 @@ const Expertes = () => {
           {/* Image 2 */}
           <div className="z-10 w-1/2 mt-20 -ms-30 ">
             <img
-              src="https://img.freepik.com/free-photo/woman-beach-with-her-baby-enjoying-sunset_52683-144131.jpg?size=626&ext=jpg"
+              src={header2}
               alt="Lab Research"
               className="rounded-2xl border-4 border-yellow-400 shadow-lg object-cover w-full h-[350px]"
             />
