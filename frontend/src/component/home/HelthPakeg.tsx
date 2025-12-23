@@ -63,7 +63,7 @@ const HelthPakeg = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  fetch(`http://127.0.0.1:8001/api/packages/`)
+  fetch(`https://sky-backend-7kjf.onrender.com/api/packages/`)
     .then((res) => res.json())
     .then((data) => {
       setPackages(data);
