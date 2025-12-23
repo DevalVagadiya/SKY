@@ -2,16 +2,27 @@ import { useEffect, useState } from "react";
 import { ArrowUpRight, FlaskRound, ClipboardList, FileCheck2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import brain from "../../assets/brain.png";
+import heart from "../../assets/heart.png";
+import kidneys from "../../assets/kidneys.png";
+import ear from "../../assets/ear.png";
+import thyroid from "../../assets/thyroid.png";
+import liver from "../../assets/liver.png";
+import lungs from "../../assets/lungs.png";
+import bones from "../../assets/bones.png";
+import allergy from "../../assets/allergy.png";
+
+
 const structures = [
-  { id: 1, name: "Brain", icon: "https://img.icons8.com/color/96/brain.png" },
-  { id: 2, name: "Heart", icon: "https://img.icons8.com/color/96/heart-with-pulse.png" },
-  { id: 3, name: "Kidneys", icon: "https://img.icons8.com/color/96/kidney.png" },
-  { id: 4, name: "Ear", icon: "https://img.icons8.com/color/96/ear.png" },
-  { id: 5, name: "Thyroid", icon: "https://img.icons8.com/color/96/thyroid.png" },
-  { id: 6, name: "Liver", icon: "https://img.icons8.com/color/96/liver.png" },
-  { id: 7, name: "Lungs", icon: "https://img.icons8.com/color/96/lungs.png" },
-  { id: 8, name: "Bones", icon: "https://img.icons8.com/color/96/bone.png" },
-  { id: 9, name: "Allergy", icon: "https://img.icons8.com/color/96/sneeze.png" },
+  { id: 1, name: "Brain", icon: brain },
+  { id: 2, name: "Heart", icon: heart },
+  { id: 3, name: "Kidneys", icon: kidneys },
+  { id: 4, name: "Ear", icon: ear },
+  { id: 5, name: "Thyroid", icon: thyroid },
+  { id: 6, name: "Liver", icon: liver },
+  { id: 7, name: "Lungs", icon: lungs },
+  { id: 8, name: "Bones", icon: bones },
+  { id: 9, name: "Allergy", icon: allergy },
 ];
 
 const steps = [
@@ -52,23 +63,23 @@ const HelthPakeg = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+  fetch(`http://127.0.0.1:8001/api/packages/`)
+    .then((res) => res.json())
+    .then((data) => {
+      setPackages(data);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.error("Error fetching package:", err);
+      setLoading(false);
+    });
+  }, []); // ✅ ADD THIS
 
-    fetch(`https://sky-backend-7kjf.onrender.com/api/packages/`)
-      .then((res) => res.json())
-      .then((data) => {
-        setPackages(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching package:", err);
-        setLoading(false);
-      });
-  });
 
   // useEffect(() => {
   //   const fetchPackages = async () => {
   //     try {
-  //       const res = await fetch("https://sky-backend-7kjf.onrender.com/api/packages"); // Your API endpoint here
+  //       const res = await fetch("http://127.0.0.1:8001/api/packages"); // Your API endpoint here
   //       const data = await res.json();
   //       setPackages(data);
   //     } catch (error) {

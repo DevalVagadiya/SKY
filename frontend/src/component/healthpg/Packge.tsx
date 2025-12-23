@@ -26,7 +26,7 @@ const Packge = () => {
         console.error("Error fetching package:", err);
         setLoading(false);
       });
-  });
+  }, []);
   
   // useEffect(() => {
   //   const fetchPackages = async () => {

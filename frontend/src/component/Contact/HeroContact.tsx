@@ -21,7 +21,7 @@ const HeroContact = () => {
           {/* Breadcrumb */}
       
         </div>
-         <div className="flex -mt-9 items-center ms-30  bg-white text-black px-4 py-2 w-55  z-10 rounded-md ">
+         <div className="flex -mt-9 items-center ms-30 bg-white text-black px-4 py-2 w-57 z-10 rounded-md ">
             <Home className="w-4 h-4 mr-2" />
             <Link to="/"> <span className="text-sm" >Home</span> </Link>
             <span className="mx-2">{`>>`}</span>
