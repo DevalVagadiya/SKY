@@ -1,3 +1,6 @@
+import header12 from "../../assets/header12.png";
+import header13 from "../../assets/header13.png"; 
+
 const AboutHp = () => {
   return (
     <>
@@ -7,13 +10,13 @@ const AboutHp = () => {
         <div className="relative flex justify-center">
           {/* Main Lab Image */}
           <img
-            src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-118143566.jpg"
+            src={header12}
             alt="Healthcare Lab"
             className="rounded-xl w-150 shadow-lg border-2 border-yellow-300"
           />
           {/* Small Family Image */}
           <img
-            src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630"
+            src={header13}
             alt="Family Healthcare"
             className="absolute bottom-[-30px] right-[-20px] w-70 rounded-xl shadow-md"
           />

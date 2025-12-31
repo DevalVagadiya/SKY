@@ -1,5 +1,6 @@
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 import { ArrowRight } from "lucide-react";
+import header14 from "../../assets/header14.png"; 
 
 const AboutContact = () => {
     return (
@@ -72,7 +73,7 @@ const AboutContact = () => {
                     {/* Right Image */}
                     <div>
                         <img
-                            src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+                            src={header14}
                             alt="Lab Contact"
                             className="w-full rounded-xl shadow-md object-cover"
                         />

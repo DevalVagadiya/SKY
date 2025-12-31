@@ -1,4 +1,8 @@
 import { CheckCircle } from "lucide-react";
+import header7 from "../../assets/header7.png";
+import header8 from "../../assets/header8.png";
+import header10 from "../../assets/header10.png";
+import header11 from "../../assets/header11.png";
 
 
 const AboutAb = () => {
@@ -10,13 +14,13 @@ const AboutAb = () => {
                     <div className="relative flex justify-center">
                         {/* First Image */}
                         <img
-                            src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=1024x1024&w=0&k=20&c=z8_rWaI8x4zApNEEG9DnWlGXyDIXe-OmsAyQ5fGPVV8=" // replace with your image path
+                            src={header7}
                             alt="Laboratory"
                             className="rounded-xl shadow-lg w-80 h-64 object-cover"
                         />
                         {/* Second Image (overlapping) */}
                         <img
-                            src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg" // replace with your image path
+                            src={header8}
                             alt="Research"
                             className="rounded-xl shadow-lg w-72 h-56 object-cover absolute -bottom-20 right-10 border-4 border-white"
                         />
@@ -75,7 +79,7 @@ const AboutAb = () => {
                 </div>
                 <div className="flex-1/3">
                     <img
-                        src={"https://images.pexels.com/photos/3845764/pexels-photo-3845764.jpeg?cs=srgb&dl=pexels-anna-shvets-3845764.jpg&fm=jpg"}
+                        src={header10}
                         alt="Mission"
                         className="w-full h-40 object-cover rounded-lg shadow-md"
                     />
@@ -91,7 +95,7 @@ const AboutAb = () => {
                 </div>
                 <div className="flex-1/3">
                     <img
-                        src={"https://images.pexels.com/photos/3845764/pexels-photo-3845764.jpeg?cs=srgb&dl=pexels-anna-shvets-3845764.jpg&fm=jpg"}
+                        src={header11}
                         alt="Vision"
                         className="w-full h-40 object-cover rounded-lg shadow-md"
                     />

@@ -7,6 +7,7 @@
 // import lungsIcon from './assets/lungs.png';
 // import bonesIcon from './assets/bones.png';
 // import allergyIcon from './assets/allergy.png';
+import header9 from "../../assets/header9.png";
 
 
 // const items = [
@@ -29,7 +30,7 @@ const AboutBt = () => {
                 {/* Left Image Section */}
                 <div className="md:w-1/2 p-4 flex items-center justify-center">
                     <img
-                        src={'https://tse4.mm.bing.net/th/id/OIP.gabnTIrb9_VUBujEuAZp1QHaEK?r=0&cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3'}
+                        src={header9}
                         alt="Vaccination"
                         className="rounded-lg shadow-md object-cover w-full h-full"
                     />

@@ -1,6 +1,6 @@
 
 import { ArrowRight } from "lucide-react";
-
+import header7 from "../../assets/header7.png";
 
 export default function GetTuch () {
     return (
@@ -11,7 +11,7 @@ export default function GetTuch () {
                         {/* Left Side - Image */}
                         <div className="relative rounded-xl overflow-hidden shadow-lg">
                             <img
-                                src="https://images.unsplash.com/photo-1581091215367-59ab6d62f083?q=80&w=1200"
+                                src={header7}
                                 alt="Scientist in lab"
                                 className="w-full h-[500px] object-cover"
                             />

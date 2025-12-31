@@ -2,25 +2,29 @@
 
 import { useState, useEffect } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import header4 from "../../assets/header4.png"; 
+import header7 from "../../assets/header7.png"; 
+import header8 from "../../assets/header8.png"; 
+
 
 const slides = [
   {
     id: 1,
     title: "Lorem Ipsum is simply dummy text dummy text",
     subtitle: "Lorem Ipsum is simply dummy text",
-    img: "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg",
+    img: header4,
   },
   {
     id: 2,
     title: "High Quality Lab Tests",
     subtitle: "Your trusted health partner",
-    img: "https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630",
+    img: header7,
   },
   {
     id: 3,
     title: "Accurate Results, Fast",
     subtitle: "We value your health",
-    img: "https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg?cs=srgb&dl=pexels-hsapir-1054655.jpg&fm=jpg",
+    img: header8,
   },
 ];
 
