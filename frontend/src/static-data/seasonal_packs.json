@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "title": "SKY MISSION HEALTH @ SKYPATH",
+        "subtitle": "Health Check-up Packages",
+        "parameters_no": "72",
+        "tests": [
+            "CBC",
+            "KIDNEY FUNCTION TEST",
+            "LIVER  FUNCTION TEST",
+            "LIPID PROFILE",
+            "TSH",
+            "Hs CRP",
+            "FBS",
+            "HbA1C",
+            "ELECTROIYTES",
+            "TESTOSTERONE",
+            "IRON DEFICIENCY PROFILE",
+            "VIAMIN B12",
+            "VITAMIN D"
+        ],
+        "reportTime": "Same day",
+        "price": "2749.00",
+        "old_price": "8400.00",
+        "discount": "33",
+        "img": "https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg?cs=srgb&dl=pexels-hsapir-1054655.jpg&fm=jpg"
+    }
+]
