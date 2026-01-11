@@ -1,28 +1,21 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowRight, Home } from "lucide-react";
+import packagesData from "../../static-data/seasonal_packs.json";
 
 const PackageDetail = () => {
   const { id } = useParams();
   const [pkg, setPkg] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!id) return;
 
-    fetch(`https://sky-backend-7kjf.onrender.com/api/seasonal_packs/${id}/`)
-      .then((res) => res.json())
-      .then((data) => {
-        setPkg(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching package:", err);
-        setLoading(false);
-      });
+    const packageId = parseInt(id, 10);
+    const selectedPackage = packagesData.find((p) => p.id === packageId);
+    
+    setPkg(selectedPackage);
   }, [id]);
 
-  if (loading) return <p className="text-center py-10">Loading package...</p>;
   if (!pkg) return <p className="text-center py-10">No data found</p>;
 
   return (

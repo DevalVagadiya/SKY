@@ -1,30 +1,22 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import HeroUnifit from "./HeroUnifit";
 import DetailUnifit from "./DetailUnifit";
+import packagesData from "../../../static-data/packages.json";
 
 const MainUnifit = () => {
   const { id } = useParams();
-  const [packageData, setPackageData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [packageData, setPackageData] = useState(null as any);
 
   useEffect(() => {
     if (!id) return;
 
-    axios
-      .get(`https://sky-backend-7kjf.onrender.com/api/packages/${id}/`)
-      .then((res) => {
-        setPackageData(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching package:", err);
-        setLoading(false);
-      });
+    const packageId = parseInt(id, 10);
+    const selectedPackage = packagesData.find((p) => p.id === packageId);
+
+    setPackageData(selectedPackage);
   }, [id]);
 
-  if (loading) return <p className="text-center py-10">Loading...</p>;
   if (!packageData) return <p className="text-center py-10">No Data Found</p>;
 
   return (

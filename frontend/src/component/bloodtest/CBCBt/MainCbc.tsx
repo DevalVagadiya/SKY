@@ -1,30 +1,22 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import HeroBtCbc from "./HeroBtCbc";
 import DetailBTCbc from "./DetailBTCbc";
+import testsData from "../../../static-data/tests.json";
 
 const MainCbc = () => {
   const { id } = useParams(); // ✅ get dynamic ID
-  const [test, setTest] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [test, setTest] = useState<typeof testsData[0] | null>(null);
 
   useEffect(() => {
     if (!id) return;
 
-    axios
-      .get(`https://sky-backend-7kjf.onrender.com/api/tests/${id}/`)  // ✅ dynamic URL
-      .then((res) => {
-        setTest(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching test:", err);
-        setLoading(false);
-      });
+    const testId = parseInt(id, 10);
+    const selectedTest = testsData.find((t) => t.id === testId);
+    
+    setTest(selectedTest ?? null);
   }, [id]);
 
-  if (loading) return <p className="text-center py-10">Loading...</p>;
   if (!test) return <p className="text-center py-10">No Data Found</p>;
 
   return (

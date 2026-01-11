@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import packagesData from "../../static-data/packages.json";
 
 type Package = {
   id: string | number;
@@ -12,39 +13,15 @@ type Package = {
 
 const Packge = () => {
   const [packages, setPackages] = useState<Package[]>([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
-    fetch(`https://sky-backend-7kjf.onrender.com/api/packages/`)
-      .then((res) => res.json())
-      .then((data) => {
-        setPackages(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching package:", err);
-        setLoading(false);
-      });
+    const transformedPackages = packagesData.map((pkg) => ({
+      ...pkg,
+      parameters_no: Number(pkg.parameters_no),
+      price: Number(pkg.price),
+    }));
+    setPackages(transformedPackages);
   }, []);
-  
-  // useEffect(() => {
-  //   const fetchPackages = async () => {
-  //     try {
-  //       const res = await fetch("https://sky-backend-7kjf.onrender.com/api/packages"); // ✅ your backend endpoint
-  //       const data = await res.json();
-  //       setPackages(data);
-  //     } catch (error) {
-  //       console.error("Error fetching packages:", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchPackages();
-  // }, []);
-
-  if (loading) return <div className="text-center py-10">Loading packages...</div>;
 
   return (
     <section className="max-w-7xl mx-auto bg-white py-12">

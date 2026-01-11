@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 import { Link, useParams, useLocation } from "react-router-dom";
+import testsData from "../../static-data/tests.json";
+import packagesData from "../../static-data/seasonal_packs.json";
 
 export default function BloodTests() {
   const [tests, setTests] = useState<any[]>([]);
   const [packages, setPackages] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
 
   const { id } = useParams();
   const location = useLocation();
@@ -15,36 +15,14 @@ export default function BloodTests() {
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const testUrl = id
-          ? `https://sky-backend-7kjf.onrender.com/api/tests/${id}/`
-          : "https://sky-backend-7kjf.onrender.com/api/tests/";
-        const packageUrl = "https://sky-backend-7kjf.onrender.com/api/seasonal_packs/";
-
-        const [testRes, packageRes] = await Promise.all([
-          fetch(testUrl),
-          fetch(packageUrl),
-        ]);
-
-        const testData = await testRes.json();
-        const packageData = await packageRes.json();
-
-        setTests(Array.isArray(testData) ? testData : [testData]);
-        setPackages(Array.isArray(packageData) ? packageData : [packageData]);
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load data");
-      } finally {
-        setLoading(false);
-      }
+    if (id) {
+      const test = testsData.find((t) => t.id === Number(id));
+      setTests(test ? [test] : []);
+    } else {
+      setTests(testsData);
     }
-
-    fetchData();
+    setPackages(packagesData);
   }, [id]);
-
-  if (loading) return <p className="text-center mt-10">Loading...</p>;
-  if (error) return <p className="text-center text-red-500">{error}</p>;
 
   // Limit tests on home page
   const visibleTests = isHomePage ? tests.slice(0, 8) : tests;

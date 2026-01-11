@@ -1,25 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import testsData from "../../static-data/tests.json";
 
 const TestBt = () => {
   const [tests, setTests] = useState<any[]>([]); // ✅ use any[] for safety
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://sky-backend-7kjf.onrender.com/api/tests/")  // ✅ Django endpoint
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Fetched tests:", data); // ✅ debug log
-        setTests(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Error fetching tests:", err);
-        setLoading(false);
-      });
+    setTests(testsData);
   }, []);
-
-  if (loading) return <p className="text-center">Loading tests...</p>;
 
   return (
     <div className="max-w-7xl mx-auto space-y-8 my-10">
@@ -68,14 +56,6 @@ const TestBt = () => {
           </p>
         )}
       </div>
-
-      {/* <div className="text-center mt-6">
-        <Link to="/blood-tests">
-          <button className="bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600 inline-flex items-center gap-2">
-            View All Tests <FaArrowRight />
-          </button>
-        </Link>
-      </div> */}
     </div>
   );
 };

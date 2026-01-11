@@ -1,26 +1,29 @@
-// import brainIcon from './assets/brain.png';
-// import heartIcon from './assets/heart.png';
-// import kidneyIcon from './assets/kidney.png';
-// import earIcon from './assets/ear.png';
-// import thyroidIcon from './assets/thyroid.png';
-// import liverIcon from './assets/liver.png';
-// import lungsIcon from './assets/lungs.png';
-// import bonesIcon from './assets/bones.png';
-// import allergyIcon from './assets/allergy.png';
+import { Link } from "react-router-dom";
+
+import brain from "../../assets/brain.png";
+import heart from "../../assets/heart.png";
+import kidneys from "../../assets/kidneys.png";
+import ear from "../../assets/ear.png";
+import thyroid from "../../assets/thyroid.png";
+import liver from "../../assets/liver.png";
+import lungs from "../../assets/lungs.png";
+import bones from "../../assets/bones.png";
+import allergy from "../../assets/allergy.png";
 import header9 from "../../assets/header9.png";
 
 
-// const items = [
-//     { icon: brainIcon, label: 'Brain' },
-//     { icon: heartIcon, label: 'Heart' },
-//     { icon: kidneyIcon, label: 'Kidneys' },
-//     { icon: earIcon, label: 'Ear' },
-//     { icon: thyroidIcon, label: 'Thyroid' },
-//     { icon: liverIcon, label: 'Liver' },
-//     { icon: lungsIcon, label: 'Lungs' },
-//     { icon: bonesIcon, label: 'Bones' },
-//     { icon: allergyIcon, label: 'Allergy' },
-// ];
+const structures = [
+  { id: 1, name: "Brain", icon: brain },
+  { id: 2, name: "Heart", icon: heart },
+  { id: 3, name: "Kidneys", icon: kidneys },
+  { id: 4, name: "Ear", icon: ear },
+  { id: 5, name: "Thyroid", icon: thyroid },
+  { id: 6, name: "Liver", icon: liver },
+  { id: 7, name: "Lungs", icon: lungs },
+  { id: 8, name: "Bones", icon: bones },
+  { id: 9, name: "Allergy", icon: allergy },
+];
+
 
 const AboutBt = () => {
     return (
@@ -74,18 +77,21 @@ const AboutBt = () => {
                     <h1 className="text-2xl font-bold text-gray-800">Hutting By Stuctures</h1>
                 </div>
 
-                {/* Icons Grid */}
-                <div className="flex flex-wrap justify-center gap-6">
-                    {/* {items.map((item, index) => (
-                        <div key={index} className="flex flex-col items-center space-y-2 cursor-pointer hover:scale-105 transform transition duration-200">
-                            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow hover:shadow-lg">
-                                <img src={item.icon} alt={item.label} className="w-10 h-10" />
-                            </div>
-                            <span className="text-sm font-medium text-gray-700">{item.label}</span>
-                        </div>
-                    ))} */}
+                <div className="flex flex-wrap justify-center gap-8">
+                {structures.map((item) => (
+                    <Link
+                    key={item.id}
+                    to={`/structures/${item.name.toLowerCase()}`}
+                    className="text-center group">
+                    <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto shadow-sm group-hover:shadow-md transition">
+                        <img src={item.icon} alt={item.name} className="w-12 h-12" />
+                    </div>
+                    <p className="mt-3 font-medium text-gray-800 group-hover:text-blue-600 transition">
+                        {item.name}
+                    </p>
+                    </Link>
+                ))}
                 </div>
-
             </div>
         </>
     )

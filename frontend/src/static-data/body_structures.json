@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "part_name": "Kidneys"
+    },
+    {
+        "id": 2,
+        "part_name": "Ear"
+    },
+    {
+        "id": 3,
+        "part_name": "Thyroid"
+    },
+    {
+        "id": 4,
+        "part_name": "Liver"
+    },
+    {
+        "id": 5,
+        "part_name": "Lungs"
+    },
+    {
+        "id": 6,
+        "part_name": "Bones"
+    },
+    {
+        "id": 7,
+        "part_name": "Allergy"
+    },
+    {
+        "id": 8,
+        "part_name": "Heart"
+    },
+    {
+        "id": 9,
+        "part_name": "Brain"
+    }
+]

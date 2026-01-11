@@ -1,5 +1,5 @@
 import header3 from "../../assets/header3.png";
-// import header4 from "../../assets/header4.png";
+import header14 from "../../assets/header14.png";
 import header5 from "../../assets/header5.png";
 import header6 from "../../assets/header6.png";
 
@@ -16,8 +16,7 @@ const services = [
         icon: "🧬",
         title: "Pathological Testing",
         desc: "Pathological testing at Trusted Experts provides accurate diagnostics for better treatment and care.",
-        image: "https://img.freepik.com/free-photo/scientists-working-laboratory_23-2149235014.jpg?w=740",
-        // header4
+        image: header14,
     },
     {
         id: 3,

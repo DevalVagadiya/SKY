@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, FlaskRound, ClipboardList, FileCheck2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import packagesData from "../../static-data/packages.json";
+
 
 import brain from "../../assets/brain.png";
 import heart from "../../assets/heart.png";
@@ -60,41 +62,10 @@ type PackageType = {
 
 const HelthPakeg = () => {
   const [packages, setPackages] = useState<PackageType[]>([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  fetch(`https://sky-backend-7kjf.onrender.com/api/packages/`)
-    .then((res) => res.json())
-    .then((data) => {
-      setPackages(data);
-      setLoading(false);
-    })
-    .catch((err) => {
-      console.error("Error fetching package:", err);
-      setLoading(false);
-    });
-  }, []); // ✅ ADD THIS
-
-
-  // useEffect(() => {
-  //   const fetchPackages = async () => {
-  //     try {
-  //       const res = await fetch("http://127.0.0.1:8001/api/packages"); // Your API endpoint here
-  //       const data = await res.json();
-  //       setPackages(data);
-  //     } catch (error) {
-  //       console.error("Error fetching packages:", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchPackages();
-  // }, []);
-
-  if (loading) {
-    return <div className="text-center py-10">Loading packages...</div>;
-  }
+    setPackages(packagesData);
+  }, []);
 
   return (
     <>
