@@ -34,20 +34,19 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`w-full fixed top-0 z-50 transition-transform duration-300 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`w-full fixed top-0 z-50 transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"
+        }`}
     >
       {/* Top Bar */}
-      <div className="bg-gray-700 text-white text-sm flex justify-between items-center px-4 md:px-6 py-2">
+      <div className="bg-gray-700 text-white text-sm hidden md:flex justify-between items-center px-4 md:px-6 py-2">
         <div className="flex items-center space-x-2">
           <Clock className="w-4 h-4" />
-          <span>Mon to Sun 08:00 AM to 08:00 PM</span>
+          <span>Mon to Sun 24Houres - 24*7</span>
         </div>
         <div className="flex items-center space-x-4 md:space-x-6 text-xs md:text-sm">
           <div className="flex items-center space-x-2">
             <Mail className="w-4 h-4" />
-            <span>test@gmail.com</span>
+            <span>skypathology025@gmail.com</span>
           </div>
           <div className="flex items-center space-x-2">
             <Phone className="w-4 h-4" />
@@ -59,11 +58,8 @@ const Header: React.FC = () => {
       {/* Main Navbar */}
       <div className="flex justify-between items-center px-4 md:px-6 py-2 bg-white shadow">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2">
-          <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
-          <div>
-            <h1 className="text-xl font-bold text-blue-600">test</h1>
-          </div>
+        <Link to="/" className="flex items-center">
+          <img src="/src/assets/Logo/3d logo.png" alt="Logo" className="h-12 md:h-20 w-auto" />
         </Link>
 
         {/* Desktop Nav Links */}
@@ -72,10 +68,9 @@ const Header: React.FC = () => {
             to="/"
             end
             className={({ isActive }) =>
-              `px-4 py-2 rounded-full transition ${
-                isActive
-                  ? "bg-yellow-500 text-white"
-                  : "hover:bg-yellow-100 hover:text-yellow-700"
+              `px-4 py-2 rounded-full transition ${isActive
+                ? "bg-yellow-500 text-white"
+                : "hover:bg-yellow-100 hover:text-yellow-700"
               }`
             }
           >
@@ -85,10 +80,9 @@ const Header: React.FC = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              `flex items-center px-4 py-2 rounded-full transition ${
-                isActive
-                  ? "bg-yellow-500 text-white"
-                  : "hover:bg-yellow-100 hover:text-blue-700"
+              `flex items-center px-4 py-2 rounded-full transition ${isActive
+                ? "bg-yellow-500 text-white"
+                : "hover:bg-yellow-100 hover:text-blue-700"
               }`
             }
           >
@@ -99,10 +93,9 @@ const Header: React.FC = () => {
           <NavLink
             to="/blood-tests"
             className={({ isActive }) =>
-              `flex items-center px-4 py-2 rounded-full transition ${
-                isActive
-                  ? "bg-yellow-500 text-white"
-                  : "hover:bg-yellow-100 hover:text-blue-700"
+              `flex items-center px-4 py-2 rounded-full transition ${isActive
+                ? "bg-yellow-500 text-white"
+                : "hover:bg-yellow-100 hover:text-blue-700"
               }`
             }
           >
@@ -113,10 +106,9 @@ const Header: React.FC = () => {
           <NavLink
             to="/packages"
             className={({ isActive }) =>
-              `flex items-center px-4 py-2 rounded-full transition ${
-                isActive
-                  ? "bg-yellow-500 text-white"
-                  : "hover:bg-yellow-100 hover:text-blue-700"
+              `flex items-center px-4 py-2 rounded-full transition ${isActive
+                ? "bg-yellow-500 text-white"
+                : "hover:bg-yellow-100 hover:text-blue-700"
               }`
             }
           >
@@ -127,10 +119,9 @@ const Header: React.FC = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              `flex items-center px-4 py-2 rounded-full transition ${
-                isActive
-                  ? "bg-yellow-500 text-white"
-                  : "hover:bg-yellow-100 hover:text-blue-700"
+              `flex items-center px-4 py-2 rounded-full transition ${isActive
+                ? "bg-yellow-500 text-white"
+                : "hover:bg-yellow-100 hover:text-blue-700"
               }`
             }
           >
@@ -166,10 +157,9 @@ const Header: React.FC = () => {
             end
             onClick={() => setMobileOpen(false)}
             className={({ isActive }) =>
-              `block px-4 py-2 rounded-full transition ${
-                isActive
-                  ? "bg-yellow-500 text-white"
-                  : "hover:bg-yellow-100 hover:text-yellow-700"
+              `block px-4 py-2 rounded-full transition ${isActive
+                ? "bg-yellow-500 text-white"
+                : "hover:bg-yellow-100 hover:text-yellow-700"
               }`
             }
           >
@@ -179,10 +169,9 @@ const Header: React.FC = () => {
             to="/about"
             onClick={() => setMobileOpen(false)}
             className={({ isActive }) =>
-              `block px-4 py-2 rounded-full transition ${
-                isActive
-                  ? "bg-yellow-500 text-white"
-                  : "hover:bg-yellow-100 hover:text-blue-700"
+              `block px-4 py-2 rounded-full transition ${isActive
+                ? "bg-yellow-500 text-white"
+                : "hover:bg-yellow-100 hover:text-blue-700"
               }`
             }
           >
@@ -192,10 +181,9 @@ const Header: React.FC = () => {
             to="/blood-tests"
             onClick={() => setMobileOpen(false)}
             className={({ isActive }) =>
-              `block px-4 py-2 rounded-full transition ${
-                isActive
-                  ? "bg-yellow-500 text-white"
-                  : "hover:bg-yellow-100 hover:text-blue-700"
+              `block px-4 py-2 rounded-full transition ${isActive
+                ? "bg-yellow-500 text-white"
+                : "hover:bg-yellow-100 hover:text-blue-700"
               }`
             }
           >
@@ -205,10 +193,9 @@ const Header: React.FC = () => {
             to="/packages"
             onClick={() => setMobileOpen(false)}
             className={({ isActive }) =>
-              `block px-4 py-2 rounded-full transition ${
-                isActive
-                  ? "bg-yellow-500 text-white"
-                  : "hover:bg-yellow-100 hover:text-blue-700"
+              `block px-4 py-2 rounded-full transition ${isActive
+                ? "bg-yellow-500 text-white"
+                : "hover:bg-yellow-100 hover:text-blue-700"
               }`
             }
           >

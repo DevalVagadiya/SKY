@@ -89,65 +89,90 @@ export default function BloodTests() {
       </div>
 
       {/* 💊 PACKAGES */}
-      <div className="my-16 bg-white flex justify-center p-6">
-        <div className="grid md:grid-cols-2 gap-6 max-w-7xl w-full">
-          {packages.map((pkg) => (
-            <div
-              key={pkg.id}
-              className={`${pkg.color || "bg-indigo-600"} relative text-white rounded-xl p-6 shadow-lg`}
-            >
-              {pkg.popular && (
-                <div className="absolute -top-4 left-6 bg-yellow-400 text-black text-xs font-bold px-3 py-2 rounded-b-lg">
-                  🌟 Popular
-                </div>
-              )}
-
-              <div className="absolute -top-4 right-6 bg-black text-white text-xs font-bold px-3 py-2 rounded-b-lg">
-                {pkg.discount}
-              </div>
-
-              <img
-                src={pkg.img}
-                alt={pkg.title}
-                className="rounded-lg mb-4 w-full h-40 object-cover"
-              />
-
-              <h2 className="text-lg font-bold">{pkg.title}</h2>
-              <p className="text-sm mb-4">{pkg.subtitle}</p>
-
-              <ul className="space-y-2 mb-4">
-                {pkg.tests.map((feature: string, index: number) => (
-                  <li key={index} className="flex items-center text-sm">
-                    <Check size={16} className="mr-2" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="text-lg font-bold">
-                ₹ {pkg.price}
-                {pkg.old_price && (
-                  <span className="text-sm font-normal line-through ml-2">
-                    ₹ {pkg.old_price}
-                  </span>
+      <div className="my-20 bg-gradient-to-b from-gray-50 to-white py-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid gap-8">
+            {packages.map((pkg) => (
+              <div
+                key={pkg.id}
+                className="group relative grid grid-cols-1 md:grid-cols-3 rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300"
+              >
+                {/* Badges */}
+                {pkg.popular && (
+                  <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-xs font-semibold px-3 py-1 rounded-full shadow">
+                    ⭐ Popular
+                  </div>
                 )}
-              </div>
 
-              <div className="flex gap-3 mt-4">
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition">
-                  Book Now <ArrowUpRight size={16} className="inline ml-1" />
-                </button>
+                <div className="absolute top-4 right-4 z-10 bg-red-600 text-white text-lg font-extrabold px-4 py-2 rounded-full shadow-lg border border-red-300 animate-pulse">
+                  {pkg.discount}% OFF
+                </div>
 
-                <Link to={`/seasonal_packs/${pkg.id}`}>
-                  <button className="bg-yellow-500 text-black px-4 py-2 rounded-full text-sm hover:bg-yellow-400 transition">
-                    View Details <ArrowUpRight size={16} className="inline ml-1" />
-                  </button>
-                </Link>
+                {/* Image - LEFT */}
+                <div className="md:col-span-1 overflow-hidden">
+                  <img
+                    src={pkg.img}
+                    alt={pkg.title}
+                    className="h-56 md:h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+
+                {/* Content - RIGHT */}
+                <div className="md:col-span-2 p-6 flex flex-col justify-between">
+                  <div>
+                    <h2 className="text-xl font-bold text-gray-900">
+                      {pkg.title}
+                    </h2>
+
+                    <p className="text-sm text-gray-500 mt-1 mb-4">
+                      {pkg.subtitle}
+                    </p>
+
+                    <ul className="space-y-2 mb-4">
+                      {pkg.tests.slice(0, 3).map((feature: string, index: number) => (
+                        <li key={index} className="flex items-center text-sm">
+                          <Check size={16} className="mr-2" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Bottom Section */}
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    {/* Price */}
+                    <div className="flex items-end gap-2">
+                      <span className="text-2xl font-bold text-indigo-600">
+                        ₹{pkg.price}
+                      </span>
+                      {pkg.old_price && (
+                        <span className="text-sm text-gray-400 line-through">
+                          ₹{pkg.old_price}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex gap-3">
+                      <button className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-indigo-700 transition">
+                        Book Now <ArrowUpRight size={16} className="inline ml-1" />
+                      </button>
+
+                      <Link to={`/seasonal_packs/${pkg.id}`}>
+                        <button className="border border-indigo-600 text-indigo-600 px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-indigo-50 transition">
+                          View Details <ArrowUpRight size={16} className="inline ml-1" />
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
+
+
     </>
   );
 }

@@ -2,7 +2,7 @@
 import { ArrowRight } from "lucide-react";
 import header7 from "../../assets/header7.png";
 
-export default function GetTuch () {
+export default function GetTuch() {
     return (
         <>
             <section className="py-16 bg-white">
@@ -30,25 +30,29 @@ export default function GetTuch () {
                             <h2 className="text-2xl font-bold text-black mb-6">
                                 Lorem Ipsum is simply dummy text of
                             </h2>
+
                             <form className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-sm font-medium text-black mb-1">
-                                            Full Name*
+                                            Full Name
                                         </label>
                                         <input
                                             type="text"
                                             placeholder="Enter full name"
+                                            required
                                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                                         />
                                     </div>
+
                                     <div>
                                         <label className="block text-sm font-medium text-black mb-1">
-                                            Email Address*
+                                            Email Address
                                         </label>
                                         <input
                                             type="email"
                                             placeholder="Enter email address"
+                                            required
                                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                                         />
                                     </div>
@@ -57,39 +61,56 @@ export default function GetTuch () {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-sm font-medium text-black mb-1">
-                                            Phone Number*
+                                            Phone Number
                                         </label>
                                         <input
                                             type="tel"
                                             placeholder="Enter phone number"
+                                            required
                                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                                         />
                                     </div>
+
                                     <div>
                                         <label className="block text-sm font-medium text-black mb-1">
                                             Service
                                         </label>
-                                        <select className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                                            <option>Select service</option>
+                                        <select
+                                            required
+                                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                        >
+                                            <option value="">Select service</option>
                                             <option>Consultation</option>
                                             <option>Testing</option>
                                             <option>Support</option>
                                         </select>
                                     </div>
+
+                                    <div>
+                                        <label className="block text-sm font-medium text-black mb-1">
+                                            Address
+                                        </label>
+                                        <input
+                                            type="text"
+                                            placeholder="Plz Enter the Address"
+                                            required
+                                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                        />
+                                    </div>
                                 </div>
 
                                 <div>
                                     <label className="block text-sm font-medium text-black mb-1">
-                                        Message*
+                                        Message
                                     </label>
                                     <textarea
                                         rows={4}
                                         placeholder="Type here..."
                                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
                                     />
+                                    {/* Message NOT required */}
                                 </div>
 
-                                {/* Submit Button */}
                                 <button
                                     type="submit"
                                     className="flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-white font-medium px-6 py-3 rounded-full shadow-md transition-all"
@@ -99,6 +120,7 @@ export default function GetTuch () {
                                 </button>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </section>
