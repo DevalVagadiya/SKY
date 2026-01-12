@@ -1,8 +1,6 @@
 import {
   Facebook,
   Instagram,
-  Twitter,
-  Youtube,
   Home,
   Info,
   Phone,
