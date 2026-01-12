@@ -1,13 +1,9 @@
-
-
 import {
   Facebook,
   Instagram,
   Twitter,
   Youtube,
   Home,
-  // Droplet,
-  // ClipboardList,
   Info,
   Phone,
   Mail,
@@ -17,115 +13,95 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[url('https://img.freepik.com/free-photo/blurred-lab-background_23-2149305109.jpg')] bg-cover bg-centeroverflow-hidden text-white">
-      {/* Curved Top Shape */}
+    <footer className="relative overflow-hidden text-white">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091215367-59ab6b8f1b7c')] bg-cover bg-center opacity-10" />
 
+      {/* Content */}
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-<a href="https://www.vecteezy.com/png/26497734-businessman-on-isolated">businessman-on-isolated PNGs by Vecteezy</a>
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/80 " />
-      {/* <svg
-        className="absolute -top-25 left-0 w-full translate-y-full"
-        viewBox="0 0 1440 100"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill="rgb(255,255,255)"
-          d="M0,100 C480,250 860,0 1440,110 L1440,180 L0,180 Z"
-          transform="scale(1,-1) translate(0,-150)"
-        ></path>
-      </svg> */}
-
-      {/* Footer Content */}
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12 pb-14 pt-23">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Left - Logo & About */}
+          {/* Brand */}
           <div>
-            <h2 className="text-2xl font-bold flex items-center gap-2">
-              <span className="text-sky-400">test</span> Program
-              <span className="text-sky-400">code</span>
+            <h2 className="text-3xl font-bold tracking-wide">
+              <span className="text-sky-400">Test</span> Program
+              <span className="text-sky-400">Code</span>
             </h2>
-            <p className="text-gray-300 mt-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard.
+            <p className="mt-4 text-gray-300 leading-relaxed">
+              Trusted diagnostic services with accurate results, modern
+              technology, and professional healthcare support.
             </p>
-            {/* Social Icons */}
-            <div className="flex gap-3 mt-4">
-              <a
-                href="#"
-                className="p-2 rounded-full bg-white/10 hover:bg-sky-500 transition"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="#"
-                className="p-2 rounded-full bg-white/10 hover:bg-sky-500 transition"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="#"
-                className="p-2 rounded-full bg-white/10 hover:bg-sky-500 transition"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="#"
-                className="p-2 rounded-full bg-white/10 hover:bg-sky-500 transition"
-              >
-                <Youtube size={18} />
-              </a>
+
+            {/* Social */}
+            <div className="flex gap-3 mt-6">
+              {[Facebook, Instagram].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="p-3 rounded-full bg-white/10 hover:bg-sky-500 hover:scale-110 transition"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Middle - Quick Links */}
+          {/* Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex items-center gap-2 hover:text-sky-400 cursor-pointer">
+            <h3 className="text-lg font-semibold mb-5 border-b border-sky-400/40 pb-2">
+              Quick Links
+            </h3>
+            <ul className="space-y-4 text-gray-300">
+              <li className="flex items-center gap-3 hover:text-sky-400 cursor-pointer transition">
                 <Home size={16} /> Home
               </li>
-              <li className="flex items-center gap-2 hover:text-sky-400 cursor-pointer">
+              <li className="flex items-center gap-3 hover:text-sky-400 cursor-pointer transition">
                 <Info size={16} /> About Us
               </li>
-              <li className="flex items-center gap-2 hover:text-sky-400 cursor-pointer">
-                {/* <Droplet size={16} /> Blood Tests */}
-              </li>
-              <li className="flex items-center gap-2 hover:text-sky-400 cursor-pointer">
-                {/* <ClipboardList size={16} /> Health Packages */}
+              <li className="flex items-center gap-3 hover:text-sky-400 cursor-pointer transition">
+                <Phone size={16} /> Contact
               </li>
             </ul>
           </div>
 
-          {/* Right - Contact Info */}
+          {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Get In Touch</h3>
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex items-start gap-2">
-                <MapPin size={18} className="mt-1 text-sky-400" />
-                {/* Shop 40, Ground floor, Serenity Space, opp. VISHWAS CITY-9, Gota, Ahmedabad */}
+            <h3 className="text-lg font-semibold mb-5 border-b border-sky-400/40 pb-2">
+              Get In Touch
+            </h3>
+            <ul className="space-y-4 text-gray-300">
+              <li className="flex items-center gap-3">
+                <MapPin className="text-sky-400 min-w-[18px]" size={18} />
+                Shop 40, Ground floor, Serenity Space, opp. VISHWAS CITY-9, Gota, Ahmedabad, Gujarat 382481
               </li>
-              <li className="flex items-center gap-2">
-                <Phone size={18} className="text-sky-400" /> +91 95107 66011
+
+              <li className="flex items-center gap-3">
+                <Phone className="text-sky-400 min-w-[18px]" size={18} />
+                +91 95107 66011
               </li>
-              <li className="flex items-center gap-2">
-                <Mail size={18} className="text-sky-400" /> test@gmail.com
+
+              <li className="flex items-center gap-3">
+                <Mail className="text-sky-400 min-w-[18px]" size={18} />
+                skypathology025@gmail.com
               </li>
-              <li className="flex items-center gap-2">
-                <Clock size={18} className="text-sky-400" /> Mon to Sun 08:00 AM - 08:00 PM
+
+              <li className="flex items-center gap-3">
+                <Clock className="text-sky-400 min-w-[18px]" size={18} />
+                Mon to Sun 24 Hours - 24×7
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          {/* <p>Copyrights 2025. All Rights are Reserved by SkyPathology Lab</p> */}
-          <div className="flex gap-4 mt-3 md:mt-0">
-            <a href="#" className="hover:text-sky-400">
-              Term of Condition
+        {/* Bottom */}
+        <div className="mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+          <p>© 2025 Test Program Code. All Rights Reserved.</p>
+          <div className="flex gap-6 mt-3 md:mt-0">
+            <a href="#" className="hover:text-sky-400 transition">
+              Terms & Conditions
             </a>
-            <a href="#" className="hover:text-sky-400">
+            <a href="#" className="hover:text-sky-400 transition">
               Privacy Policy
             </a>
           </div>
