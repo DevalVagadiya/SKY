@@ -1,4 +1,6 @@
+import { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
+import Preloader from './component/Preloader';
 import Home from "./component/home/Home";
 // import BloodTest from "./component/home/BloodTest";
 import About from "./component/about/About";
@@ -11,24 +13,38 @@ import MainContact from "./component/Contact/MainContact";
 import PackageDetail from "./component/home/PackageDetail";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time (e.g. 2.5 seconds)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/structures/:structureName" element={<StructurePage />} />
-      <Route path="/about" element={<About/>} />
-      <Route path="/blood-tests" element={<BloodTestMain/>} />
-      <Route path="/blood-tests/:id" element={<MainCbc />} />
-      <Route path="/packages" element={<MainHelth/>} />
-      <Route path="/package/:id" element={<MainUnifit/>} />
-      <Route path="/seasonal_packs/:id" element={<PackageDetail />} />
-      {/* <Route path="/blood-tests/:id" element={<BloodTest />} /> */}
+    <>
+      {loading && <Preloader />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/structures/:structureName" element={<StructurePage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blood-tests" element={<BloodTestMain />} />
+        <Route path="/blood-tests/:id" element={<MainCbc />} />
+        <Route path="/packages" element={<MainHelth />} />
+        <Route path="/package/:id" element={<MainUnifit />} />
+        <Route path="/seasonal_packs/:id" element={<PackageDetail />} />
+        {/* <Route path="/blood-tests/:id" element={<BloodTest />} /> */}
 
-      {/* ✅ Only keep dynamic route for test details */}
-      {/* <Route path="/tests/:id" element={<MainCbc />} /> */}
+        {/* ✅ Only keep dynamic route for test details */}
+        {/* <Route path="/tests/:id" element={<MainCbc />} /> */}
 
-      <Route path="/contact" element={<MainContact/>} />
-      <Route path="/appointment" element={<h1>Make Appointment</h1>} />
-    </Routes>
+        <Route path="/contact" element={<MainContact />} />
+        <Route path="/appointment" element={<h1>Make Appointment</h1>} />
+      </Routes>
+    </>
   );
 }
 
