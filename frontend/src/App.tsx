@@ -11,6 +11,9 @@ import MainHelth from "./component/healthpg/MainHelth";
 import MainUnifit from "./component/healthpg/UNIFIT PLUS @ UNIPATH/MainUnifit";
 import MainContact from "./component/Contact/MainContact";
 import PackageDetail from "./component/home/PackageDetail";
+import Appoinment from './component/appoinment/Appoinment';
+
+import ScrollToTop from './component/ScrollToTop';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,6 +29,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       {loading && <Preloader />}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -42,7 +46,7 @@ function App() {
         {/* <Route path="/tests/:id" element={<MainCbc />} /> */}
 
         <Route path="/contact" element={<MainContact />} />
-        <Route path="/appointment" element={<h1>Make Appointment</h1>} />
+        <Route path="/appointment" element={<Appoinment />} />
       </Routes>
     </>
   );
