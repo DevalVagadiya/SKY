@@ -45,7 +45,7 @@ const HeroHm = () => {
   const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
 
   return (
-    <section className="w-full relative my-10 py-8">
+    <section className="w-full relative py-8">
       <div className="max-w-9xl mx-auto relative overflow-hidden rounded-3xl shadow-lg h-[500px]">
         {slides.map((slide, index) => (
           <div
