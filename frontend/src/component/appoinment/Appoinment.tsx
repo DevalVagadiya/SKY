@@ -19,7 +19,7 @@ const Appoinment = () => {
         name: '',
         contact: '',
         age: '',
-        gender: '', // Male, Female, Child
+        gender: '',
         address: '',
         email: '',
         time: '',
@@ -110,13 +110,14 @@ const Appoinment = () => {
             <div className="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all hover:shadow-2xl duration-300">
 
                 {/* Header Section */}
-                <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-8 text-white relative overflow-hidden">
+                <div className="bg-gradient-to-r from-blue-500 to-indigo-900 p-8 text-white relative overflow-hidden">
                     <div className="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl"></div>
                     <div className="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl"></div>
 
-                    <h2 className="text-3xl font-extrabold text-center tracking-tight mb-2 relative z-10">
+                    <h2 className="text-3xl font-extrabold text-center tracking-wide mb-2 relative z-10">
                         Book an Appointment
                     </h2>
+
                     <p className="text-center text-blue-100 relative z-10">
                         Schedule your laboratory tests quickly and easily.
                     </p>
@@ -382,7 +383,7 @@ const Appoinment = () => {
                     <div className="pt-4">
                         <button
                             type="submit"
-                            className="w-full flex justify-center items-center py-4 px-6 border border-transparent rounded-lg shadow-lg text-lg font-bold text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                            className="w-full flex justify-center items-center py-4 px-6 border border-transparent rounded-lg shadow-lg text-lg font-bold text-white bg-gradient-to-r from-indigo-500 to-blue-800 hover:from-indigo-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                         >
                             Book Appointment
                             <Send className="ml-2 h-5 w-5" />
