@@ -12,6 +12,8 @@ import {
   X,
 } from "lucide-react";
 
+import logo from "../assets/Logo/3d logo.png";
+
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
@@ -34,7 +36,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`w-full fixed top-0 z-50 transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"
+      className={`w-full sticky top-0 z-50 transition-transform duration-300 ${showNavbar ? "translate-y-0" : "-translate-y-full"
         }`}
     >
       {/* Top Bar */}
@@ -59,7 +61,7 @@ const Header: React.FC = () => {
       <div className="flex justify-between items-center px-4 md:px-6 py-2 bg-white shadow">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src="/src/assets/Logo/3d logo.png" alt="Logo" className="h-12 md:h-20 w-auto" />
+          <img src={logo} alt="Sky Pathology Logo" className="h-12 md:h-16 w-auto" />
         </Link>
 
         {/* Desktop Nav Links */}

@@ -1,0 +1,125 @@
+/* Preloader.css */
+.preloader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    /* Light gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 30px;
+}
+
+.preloader-logo {
+    width: 150px;
+    /* Kept at 150px as per previous request */
+    height: auto;
+    /* Gentle float animation */
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+}
+
+/* DNA Container */
+.dna-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    gap: 12px;
+}
+
+/* DNA Strands (The dots) */
+.dna-strand {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: #0d6efd;
+    /* Blue */
+    border-radius: 50%;
+    animation: dna-bounce 1.5s infinite ease-in-out;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+.dna-strand::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    /* Distance between the two strands */
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #20c997;
+    /* Teal */
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.loading-text {
+    color: #495057;
+    /* Darker text for light bg */
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeText 2s infinite ease-in-out;
+}
+
+/* Keyframes */
+
+@keyframes dna-bounce {
+
+    0%,
+    100% {
+        transform: translateY(-10px) scale(0.8);
+        background-color: #0d6efd;
+        /* Blue */
+        z-index: 1;
+    }
+
+    50% {
+        transform: translateY(10px) scale(1.2);
+        background-color: #0b5ed7;
+        /* Darker Blue */
+        z-index: 0;
+    }
+}
+
+/* We create a secondary conceptual rotation by modifying the color/scale/Y-pos */
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes fadeText {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
